@@ -1,6 +1,7 @@
 import { displayTabBasedOnTab } from "../Arrays/arrays.js";
 import { getGroceryCards } from "../Arrays/groceryCards.js";
 import { getShopCards } from "../Arrays/shopCards.js";
+import { chunkArray } from "../Arrays/arrayquestions.js";
 
 export function renderNavBar(appContainer) {
   const loginPage = `
@@ -56,16 +57,16 @@ export function renderNavBar(appContainer) {
 </div>
   `;
 
-  //preventing right click option to open DOM
-  document.addEventListener("contextmenu",(e)=>e.preventDefault());
+  // //preventing right click option to open DOM
+  // document.addEventListener("contextmenu",(e)=>e.preventDefault());
 
 
-  //Disabled DOM using Shorcuts like ctrl+shift+i ,ctrl+shift+j ,ctrl+shift+c
-  document.addEventListener('keydown',(e)=>{
-    if(e.key==='F12' || e.ctrlKey && e.shiftKey && e.key==='I' || e.ctrlKey && e.shiftKey && e.key === 'J' || e.ctrlKey && e.shiftKey && e.key=== 'C'){
-      e.preventDefault();
-    }
-  })
+  // //Disabled DOM using Shorcuts like ctrl+shift+i ,ctrl+shift+j ,ctrl+shift+c
+  // document.addEventListener('keydown',(e)=>{
+  //   if(e.key==='F12' || e.ctrlKey && e.shiftKey && e.key==='I' || e.ctrlKey && e.shiftKey && e.key === 'J' || e.ctrlKey && e.shiftKey && e.key=== 'C'){
+  //     e.preventDefault();
+  //   }
+  // })
 
 
   
@@ -97,4 +98,5 @@ export function renderNavBar(appContainer) {
   displayTabBasedOnTab("home-page-tab");
   getGroceryCards("groceries-container");
   getShopCards("shops-container");
-}
+
+  chunkArray(10,[1, 2, 3, 4, 5, 6, 7,8,9,10,11,12])}
