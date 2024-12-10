@@ -56,6 +56,20 @@ export function renderNavBar(appContainer) {
 </div>
   `;
 
+  //preventing right click option to open DOM
+  document.addEventListener("contextmenu",(e)=>e.preventDefault());
+
+
+  //Disabled DOM using Shorcuts like ctrl+shift+i ,ctrl+shift+j ,ctrl+shift+c
+  document.addEventListener('keydown',(e)=>{
+    if(e.key==='F12' || e.ctrlKey && e.shiftKey && e.key==='I' || e.ctrlKey && e.shiftKey && e.key === 'J' || e.ctrlKey && e.shiftKey && e.key=== 'C'){
+      e.preventDefault();
+    }
+  })
+
+
+  
+
   let divElement = document.createElement("div");
   divElement.innerHTML = loginPage;
 
