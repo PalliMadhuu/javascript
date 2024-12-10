@@ -75,3 +75,93 @@ export function arrayMethodsInJs(){
         }
         console.log(chunkArray);
     }
+
+
+
+    const expandedArray = [
+        { name: 'Alice', age: 25 },
+        { name: 'Bob', age: 25 },
+        { name: 'Charlie', age: 30 },
+        { name: 'Diana', age: 25 },
+        { name: 'Edward', age: 25 },
+        { name: 'Fiona', age: 30 },
+        { name: 'George', age: 30 },
+        { name: 'Hannah', age: 25 },
+        { name: 'Ian', age: 30 },
+          { name: 'Ian', age: 31},
+      
+      ];
+      
+      //group by function which groups based on keys
+      function groupBy(array,key){
+          let groups={};
+          
+          array.forEach((obj)=>{
+              let groupKey=obj[key];
+              if(!groups[groupKey]){
+                  groups[groupKey]=[];
+              }
+              groups[groupKey].push(obj)
+              
+          })
+          console.log(groups);
+      }
+      
+      groupBy(expandedArray,'age')
+
+
+//finding consequetive sequence
+const sortedArray = [100, 4, 200, 1, 3, 2,5,6,7,8,101,102,103,104,105,106,107,108,206,207,209];
+
+let array=sortedArray.sort((a,b)=>a-b);
+let longestSequence=1;
+let templongestsequence=1;
+for(let i=0;i<array.length-1;i++){
+    if(array[i]==array[i+1]-1){
+        longestSequence++;
+    }
+    else{
+        if(longestSequence>templongestsequence)
+        {
+        templongestsequence=longestSequence;
+        }
+        longestSequence=1;
+    }
+    
+}
+templongestsequence=Math.max(templongestsequence,longestSequence) 
+console.log(templongestsequence)
+
+// const array = [1, 2, 3, 4, 5, 6];
+// const target = 7;
+// pair the values  according to sum
+
+function targetPair(){
+    let array = [1, 2, 3, 4, 5, 6];
+    let target=7;
+    let pairs=[];
+    array.forEach((num,index)=>{
+        for(let i=index=1;i<array.length;i++){
+            if(num+array[i]===target){
+               pairs.push([num,array[i]]);
+            }
+
+        }
+    })
+}
+
+
+//used to reverse by k
+function revByRight(){
+const array = [1, 2, 3, 4, 5, 6];
+
+let revArray=array.reverse();
+let k=3;
+console.log(revArray.splice(0,k).reverse().concat(array.reverse()));
+}
+
+
+
+
+
+
