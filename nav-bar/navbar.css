@@ -24,7 +24,6 @@ ul {
     height: 40px;
   }
   .journey-tab{
-    background-color:#281e1e;
     color:white;
     text-align: center;
     margin-top: -20px;
@@ -201,6 +200,15 @@ ul {
   .delivery-gif{
    height: 250px;
   }
+
+  .nav-items-tab{
+    display: flex;
+  }
+
+
+
+
+  
 
 
   
