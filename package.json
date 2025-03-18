@@ -1,6 +1,11 @@
 {
+  "scripts": {
+    "start": "live-server --port=3000"
+  },
   "devDependencies": {
-    "node": "^20.18.1",
     "sass": "^1.82.0"
+  },
+  "dependencies": {
+    "live-server": "^1.2.2"
   }
 }
