@@ -2,6 +2,10 @@ import { displayTabBasedOnTab } from "../Arrays/arrays.js";
 import { getGroceryCards } from "../Arrays/groceryCards.js";
 import { getShopCards } from "../Arrays/shopCards.js";
 import { chunkArray } from "../Arrays/arrayquestions.js";
+import { fetchUsers,fetchUsersWithXHR } from "../Advanced/Fetch/apis.js";
+import { callPromise } from "../Advanced/Promise/basicPromise.js";
+import { handlingMultiplePromises ,handlingAllSettled,handlingRace,handlingAny} from "../Advanced/Promise/multiplePromises.js";
+
 
 export function renderNavBar(appContainer) {
   const loginPage = `
@@ -101,4 +105,13 @@ export function renderNavBar(appContainer) {
   getShopCards("shops-container");
 
   chunkArray(10, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
+  fetchUsers();
+  fetchUsersWithXHR();
+  //calling basic promises and used all the methods in promises
+  callPromise();
+  handlingMultiplePromises();
+  handlingAllSettled();
+  handlingRace();
+  handlingAny();
+
 }
